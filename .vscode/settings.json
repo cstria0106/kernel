@@ -1,0 +1,17 @@
+{
+    "C_Cpp.files.exclude": {
+        "**/.vscode": true,
+        "**/.vs": true,
+        "linux/drivers/gpu/drm/amd/include/asic_reg/**/*": true
+    },
+    "C_Cpp.codeAnalysis.exclude": {
+        "drivers/gpu/drm/amd/include/asic_reg/**/*": true
+    },
+    "files.associations": {
+        "*.h": "c",
+        "*.tcc": "c",
+        "*.inc": "c"
+    },
+    "explorer.excludeGitIgnore": true,
+    "editor.formatOnSave": false
+}

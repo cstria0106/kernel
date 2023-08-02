@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}",
+                "${workspaceFolder}/linux/include",
+                "${workspaceFolder}/linux/include/uapi",
+                "${workspaceFolder}/linux/include/generated",
+                "${workspaceFolder}/linux/arch/x86/include",
+                "${workspaceFolder}/linux/arch/x86/include/uapi",
+                "${workspaceFolder}/linux/arch/x86/include/generated"
+            ],
+            "forcedInclude": ["${workspaceFolder}/linux/include/generated/autoconf.h"],
+            "defines": [
+                "KBUILD_MODNAME=\"stub\"",
+                "__GNUC__",
+                "__KERNEL__",
+                "MODULE"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c89",
+            "intelliSenseMode": "linux-gcc-x64",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}

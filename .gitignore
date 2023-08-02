@@ -1,4 +1,3 @@
-/.vscode
 /rootfs
 /vmlinux
 /vmlinux-gdb.py
