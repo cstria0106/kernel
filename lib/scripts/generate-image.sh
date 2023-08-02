@@ -38,8 +38,12 @@ sudo mount "$FILENAME" mount
 echo "Setup Arch Linux system on guest..."
 sudo pacstrap mount
 
+echo "Generating host ssh key..."
+ssh-keygen -ted25519 -f .ssh_identity -N ""
+
 echo "Running initialize script for guest..."
-cat ./lib/scripts/initialize-guest.sh | sudo arch-chroot mount
+SSH_PUBLIC_KEY=$(printf "%q" | cat .ssh_identity.pub) \
+    envsubst < ./lib/scripts/guest/initialize.sh | cat | sudo arch-chroot mount
 
 echo "Unmounting image..."
 sudo umount mount # Unmount guest root

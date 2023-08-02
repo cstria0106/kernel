@@ -3,3 +3,4 @@
 /vmlinux-gdb.py
 /scripts
 /mount
+/.ssh_identity*

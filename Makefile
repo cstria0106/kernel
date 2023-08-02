@@ -17,9 +17,9 @@ umount: $(MOUNT_DIR)
 kernel:
 	cd $(LINUX_DIR) && make -j`nproc`
 
-kernel-modules: kernel mount install-kernel-modules umount
+install-kernel-modules: kernel mount _install-kernel-modules umount
 
-install-kernel-modules:
+_install-kernel-modules:
 	cd $(LINUX_DIR) && sudo INSTALL_MOD_PATH=$(MOUNT_DIR) make -j`nproc` modules_install
 
 run: $(ROOTFS) $(BZIMAGE) 
@@ -36,6 +36,9 @@ debug: $(LINUX_DIR)/vmlinux-gdb.py $(LINUX_DIR)/scripts/gdb
 	cp -r $(LINUX_DIR)/scripts/gdb scripts
 	cp $(LINUX_DIR)/vmlinux .
 	cgdb vmlinux
+
+ssh: .ssh_identity
+	ssh -p $(SSH_PORT) -i .ssh_identity root@localhost
 
 clean:
 	rm -rf scripts
