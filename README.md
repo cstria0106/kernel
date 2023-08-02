@@ -23,6 +23,9 @@ make run
 # Now you are in guest Linux VM
 # You can login as root without password
 # To terminate VM, type ^A and X
+
+# To ssh into guest
+make ssh
 ```
 
 ### Debug
