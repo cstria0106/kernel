@@ -5,7 +5,7 @@ My Linux kernel study repository with build/debug scripts!
 ## How to start
 ```sh
 # Clone repository
-git clone --recurse-submodules https://github.com/cstria0106/kernel
+git clone --recurse-submodules https://github.com/cstria0106/kernel # You can add --shallow-submodules for fast clone
 
 # Configure kernel
 cd kernel/linux
