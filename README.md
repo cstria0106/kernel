@@ -27,6 +27,7 @@ make run
 
 ### Debug
 - Enable debugging features of kernel
+- Enable GDB scripts(GDB_SCRIPTS)
 - Disable KASLR(CONFIG_RANDOMIZE_BASE) feature of kernel
 - Install Cgdb
 - Add "add-auto-load-safe-path [directory]" in ~/.gdbinit
