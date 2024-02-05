@@ -10,7 +10,11 @@
     "files.associations": {
         "*.h": "c",
         "*.tcc": "c",
-        "*.inc": "c"
+        "*.inc": "c",
+        "exception": "c",
+        "new": "c",
+        "*.def": "c",
+        "random": "c"
     },
     "explorer.excludeGitIgnore": true,
     "editor.formatOnSave": false
