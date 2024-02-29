@@ -66,7 +66,7 @@ start:
     @just _test_image
     @qemu-system-x86_64 \
         -s \
-        -kernel linux/arch/x86_64/boot/bzImage -drive format=raw,file={{image-name}},if=ide \
+        -kernel linux/arch/x86_64/boot/bzImage -drive format=raw,file={{image-name}} \
         -enable-kvm -nographic -m 16G -cpu host -smp `nproc` \
         -nic user,hostfwd=tcp::{{ssh-port}}-:22	\
         -append "quiet root=/dev/sda earlyprintk=serial,ttyS0,9600 console=ttyS0,9600n8"
@@ -79,3 +79,6 @@ install-modules:
 
 build:
     cd linux && make -j`nproc`
+
+ssh:
+    ssh -p {{ssh-port}} root@localhost -i .ssh_identity

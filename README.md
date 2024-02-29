@@ -1,30 +1,34 @@
 # Kernel
 
-My Linux kernel study repository with build/debug scripts!
+Linux kernel study repository
+Includes justfile script for build/run/debug kernel
 
 ## How to start
 ```sh
 # Clone repository
-git clone --recurse-submodules https://github.com/cstria0106/kernel # You can add --shallow-submodules for fast clone
+git clone https://github.com/cstria0106/kernel
 
-# Configure kernel
-cd kernel/linux
-make menuconfig
-cd ..
+# Make config
+cd linux && make nconfig
 
-# Generate file system image (only available on Arch Linux)
-./lib/scripts/generate-image.sh rootfs
+# Build
+just build
 
-# Build and run!
-make kernel
-make kernel-modules
-make run
+# Generate os file system (only available in Arch Linux with pacstrap)
+just create-img 64G
 
-# Now you are in guest Linux VM
+# Build
+just build
+just install-modules
+
+# Run
+just start
+
+# Now guest will be booted
 # You can login as root without password
-# To terminate VM, type ^A and X
+# To terminate, type ^A and X
 
-# To ssh into guest
+# SSH ingo guest
 make ssh
 ```
 
@@ -36,5 +40,5 @@ make ssh
 - Add "add-auto-load-safe-path [directory]" in ~/.gdbinit
 
 ```sh
-make debug
+just debug
 ```
